@@ -29,11 +29,11 @@
                         <el-table :data="tblSurplusData" stripe style="width: 100%">
                             <el-table-column prop="address" label="">
                             </el-table-column>
-                            <el-table-column prop="centum" label="百" width="80">
+                            <el-table-column prop="centum" label="百" width="60">
                             </el-table-column>
-                            <el-table-column prop="thousand" label="千" width="80">
+                            <el-table-column prop="thousand" label="千" width="60">
                             </el-table-column>
-                            <el-table-column prop="tenthousand" label="万" width="80">
+                            <el-table-column prop="tenthousand" label="万" width="60">
                             </el-table-column>
                         </el-table>
                     </div>
@@ -63,8 +63,24 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'hello',
+    mounted() {
+        axios.get('http://localhost:3000/SurplusData', {
+            timeout: 5000
+        }).then(response => {
+            console.log(response);
+            this.tblSurplusData = response.data;
+        }).catch(error => {
+            console.log(error);
+            this.$notify.error({
+                title: '错误',
+                message: '拉取\'发票剩余\'信息超时！'
+            });
+        })
+    },
     data() {
         return {
             msg: '开票申请',
@@ -85,12 +101,7 @@ export default {
                 name: '王小虎',
                 address: '上海市普陀区金沙江路 1516 弄'
             }],
-            tblSurplusData: [{
-                address: '四川',
-                centum: '80',
-                thousand: '11',
-                tenthousand: '8'
-            }],
+            tblSurplusData: [],
             radio3: '全部',
         }
     }
