@@ -2,6 +2,10 @@
     background-color: #fff;
 }
 
+.nav .el-menu li.is-active {
+    background-color: #E5E9F2;
+}
+
 .nav .el-menu li.is-active::before {
     content: "";
     width: 5px;

@@ -7,7 +7,9 @@
       </div>
       <div class="right">
         <div class="right-content">
-          <router-view></router-view>
+          <div class="area">
+            <router-view></router-view>
+          </div>
         </div>
       </div>
     </div>

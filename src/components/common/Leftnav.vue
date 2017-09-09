@@ -1,6 +1,6 @@
 <template>
     <div class="nav">
-        <el-menu :router="true" class="el-menu-vertical-demo" @select="handleOpen">
+        <el-menu :router="true" default-active="/" class="el-menu-vertical-demo" @select="handleOpen">
             <el-menu-item index="/"><i class="el-icon-document"></i>首页</el-menu-item>
             <el-menu-item index="/credit"><i class="el-icon-date"></i>应收账款</el-menu-item>
             <el-menu-item index="/invoice"><i class="el-icon-star-off"></i>开票申请</el-menu-item>
