@@ -16,6 +16,10 @@ body {
 
 /*公用*/
 
+a {
+    text-decoration: none;
+}
+
 .locaabs {
     position: absolute;
     top: 0;
