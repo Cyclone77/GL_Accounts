@@ -49,13 +49,13 @@
                     </div>
                     <!-- 内容 -->
                     <div class="syschunk">
-                        <el-radio-group v-model="radio3">
+                        <el-radio-group v-model="ccountradio" @change="barchange">
                             <el-radio-button label="全部"></el-radio-button>
                             <el-radio-button label="系统"></el-radio-button>
                             <el-radio-button label="手填"></el-radio-button>
                         </el-radio-group>
                         <div class="syschunktbl">
-                            <el-table :data="tblSysCcountData"  v-loading.body="loading" border style="width: 100%" max-height="320">
+                            <eltablepage :params="params" url="http://localhost:3000/tblpage">
                                 <el-table-column prop="rowindex" label="序号" fixed>
                                 </el-table-column>
                                 <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">
@@ -86,7 +86,7 @@
                                         <el-button type="text" size="small">确认</el-button>
                                     </template>
                                 </el-table-column>
-                            </el-table>
+                            </eltablepage>
                         </div>
                     </div>
                 </div>
@@ -98,9 +98,13 @@
 
 <script>
 import axios from 'axios'
+import eltablepage from '@/components/common/Table'
 
 export default {
     name: 'hello',
+    components: {
+        eltablepage
+    },
     mounted() {
         axios.get('http://localhost:3000/SurplusData', {
             timeout: 5000
@@ -138,6 +142,9 @@ export default {
         },
         filterTag: function(value, row) {
             return row.applicationtime > value;
+        },
+        barchange: function(value) {
+            console.log('选中了', value);
         }
     },
     data() {
@@ -161,13 +168,13 @@ export default {
                 address: '上海市普陀区金沙江路 1516 弄'
             }],
             tblSurplusData: [],
-            loading:true,
-            tblSysCcountData: [],
+            loading: true,
             chunkTime: [{
                 text: '2010年以后',
                 value: '2010-01-01'
             }],
-            radio3: '全部',
+            ccountradio: '全部',
+            params: {}
         }
     }
 }
