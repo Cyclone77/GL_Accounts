@@ -19,6 +19,7 @@
 <script>
 import leftnav from '@/components/common/Leftnav'
 import handle from '@/components/common/Handle'
+
 export default {
   name: 'app',
   components: {

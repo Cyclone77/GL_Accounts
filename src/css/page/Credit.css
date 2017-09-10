@@ -1,0 +1,21 @@
+.credit {
+    height: 100%;
+    position: relative;
+}
+
+.credit .core {
+    background-color: #fff;
+    padding: 24px;
+}
+
+.credit .credittbl {
+    position: absolute;
+    top: 95px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 24px;
+    overflow: auto;
+}

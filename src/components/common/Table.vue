@@ -55,6 +55,7 @@ export default {
                 this.loading = false;
                 this.sourceData = response.data;
                 this.sourceTotal = 18;
+                console.log("执行了表格取数");
             }).catch(error => {
                 console.log(error);
                 this.$notify.error({
