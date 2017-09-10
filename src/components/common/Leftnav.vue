@@ -30,7 +30,6 @@ export default {
     },
     methods: {
         handleOpen(key, keyPath) {
-            console.log(key, keyPath);
         }
     }
 }

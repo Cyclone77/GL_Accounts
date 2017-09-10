@@ -109,21 +109,7 @@ export default {
         axios.get('http://localhost:3000/SurplusData', {
             timeout: 5000
         }).then(response => {
-            console.log(response);
             this.tblSurplusData = response.data;
-        }).catch(error => {
-            console.log(error);
-            this.$notify.error({
-                title: '错误',
-                message: '拉取\'发票剩余\'信息超时！'
-            });
-        })
-        axios.get('http://localhost:3000/tblSysCcountData', {
-            timeout: 5000
-        }).then(response => {
-            console.log(response);
-            this.tblSysCcountData = response.data;
-            this.loading = false;
         }).catch(error => {
             console.log(error);
             this.$notify.error({

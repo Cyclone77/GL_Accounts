@@ -32,7 +32,6 @@ export default {
     },
     methods: {
         handleSizeChange: function(size) {
-            console.log(size);
             if (this.pageSize === size) return;
             this.pageSize = size;
             this.pageIndex = 1;
@@ -41,14 +40,12 @@ export default {
         handleIndexChange: function(index) {
             if (this.pageIndex === index) return;
             this.pageIndex = index;
-            console.log(index);
             this.fetch(index, this.pageSize);
         },
         fetch: function(index, size) {
             var send = this.params || {};
             send.pageIndex = index || 1;
             send.pageSize = size || 5;
-            console.log("带分页表格取数", send.pageIndex, "--", send.pageSize)
             //取数
 
             this.loading = true;
@@ -56,7 +53,6 @@ export default {
                 timeout: 5000
             }).then(response => {
                 this.loading = false;
-                console.log(response);
                 this.sourceData = response.data;
                 this.sourceTotal = 18;
             }).catch(error => {
