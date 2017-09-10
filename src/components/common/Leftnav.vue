@@ -26,7 +26,9 @@ export default {
         }
     },
     created() {
-        this.defaultActive = this.$route.path;
+        var routpath = this.$route.path.split("/");
+        //console.log(routpath,routpath[1]);
+        this.defaultActive = `/${routpath[1]}`;
     },
     methods: {
         handleOpen(key, keyPath) {
