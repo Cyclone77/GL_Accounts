@@ -54,6 +54,40 @@
                             <el-radio-button label="系统"></el-radio-button>
                             <el-radio-button label="手填"></el-radio-button>
                         </el-radio-group>
+                        <div class="syschunktbl">
+                            <el-table :data="tblSysCcountData"  v-loading.body="loading" border style="width: 100%" max-height="320">
+                                <el-table-column prop="rowindex" label="序号" fixed>
+                                </el-table-column>
+                                <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">
+                                </el-table-column>
+                                <el-table-column prop="applicationpsn" label="申请人">
+                                </el-table-column>
+                                <el-table-column prop="tickettime" label="要求票面时间" width="140">
+                                </el-table-column>
+                                <el-table-column prop="ticketunit" label="开票单位" width="100">
+                                </el-table-column>
+                                <el-table-column prop="comeunit" label="出票单位" width="100">
+                                </el-table-column>
+                                <el-table-column prop="ticketcon" label="开票内容" width="100">
+                                </el-table-column>
+                                <el-table-column prop="Subprime" label="贷品">
+                                </el-table-column>
+                                <el-table-column prop="gathering" label="收款">
+                                </el-table-column>
+                                <el-table-column prop="area" label="地区">
+                                </el-table-column>
+                                <el-table-column prop="source" label="来源">
+                                </el-table-column>
+                                <el-table-column prop="way" label="方式">
+                                </el-table-column>
+                                <el-table-column fixed="right" label="操作" width="100">
+                                    <template scope="scope">
+                                        <el-button @click="handleClick" type="text" size="small">审核</el-button>
+                                        <el-button type="text" size="small">确认</el-button>
+                                    </template>
+                                </el-table-column>
+                            </el-table>
+                        </div>
                     </div>
                 </div>
             </el-col>
@@ -80,6 +114,31 @@ export default {
                 message: '拉取\'发票剩余\'信息超时！'
             });
         })
+        axios.get('http://localhost:3000/tblSysCcountData', {
+            timeout: 5000
+        }).then(response => {
+            console.log(response);
+            this.tblSysCcountData = response.data;
+            this.loading = false;
+        }).catch(error => {
+            console.log(error);
+            this.$notify.error({
+                title: '错误',
+                message: '拉取\'发票剩余\'信息超时！'
+            });
+        })
+    },
+    methods: {
+        handleClick: function() {
+            this.$notify({
+                title: '审批结果',
+                message: '审批已通过！',
+                type: 'success'
+            });
+        },
+        filterTag: function(value, row) {
+            return row.applicationtime > value;
+        }
     },
     data() {
         return {
@@ -102,6 +161,12 @@ export default {
                 address: '上海市普陀区金沙江路 1516 弄'
             }],
             tblSurplusData: [],
+            loading:true,
+            tblSysCcountData: [],
+            chunkTime: [{
+                text: '2010年以后',
+                value: '2010-01-01'
+            }],
             radio3: '全部',
         }
     }
@@ -111,4 +176,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '~@/css/page/Invoice.css';
+.title {
+    font-weight: bold;
+}
 </style>

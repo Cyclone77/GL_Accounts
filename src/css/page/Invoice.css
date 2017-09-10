@@ -1,19 +1,19 @@
-.panel {
+.invoice .panel {
     background-color: #fff;
 }
 
 
 /*金额管理*/
 
-.moneyopt {}
+.invoice .moneyopt {}
 
-.paneltitle {
+.invoice .paneltitle {
     height: 50px;
     line-height: 50px;
     border-bottom: 1px solid #EFF2F7;
 }
 
-.paneltitle .title {
+.invoice .paneltitle .title {
     margin-left: 20px;
     padding-left: 10px;
     display: inline-block;
@@ -22,29 +22,33 @@
     line-height: 30px;
 }
 
-.moneytbl {
+.invoice .moneytbl {
     padding: 20px;
 }
 
 
 /*发票剩余*/
 
-.surplus {
+.invoice .surplus {
     margin-left: 10px;
     background-color: #fff;
 }
 
-.surplustbl {
+.invoice .surplustbl {
     padding: 20px;
 }
 
 
 /*系统入账*/
 
-.sysaccount {
+.invoice .sysaccount {
     margin-top: 10px;
 }
 
-.syschunk {
+.invoice .syschunk {
     padding: 20px;
+}
+
+.syschunktbl {
+    margin-top: 20px;
 }
