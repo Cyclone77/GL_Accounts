@@ -16,7 +16,8 @@ export default {
     name: 'eltablepage',
     props: {
         url: String,
-        params: Object
+        params: Object,
+        msg: String
     },
     created: function() {
         this.fetch();
@@ -46,6 +47,7 @@ export default {
             var send = this.params || {};
             send.pageIndex = index || 1;
             send.pageSize = size || 5;
+            this.msg = this.msg || "";
             //取数
 
             this.loading = true;
@@ -60,7 +62,7 @@ export default {
                 console.log(error);
                 this.$notify.error({
                     title: '错误',
-                    message: '拉取\'发票剩余\'信息超时！'
+                    message: `拉取${this.msg}信息超时！`
                 });
             })
         }

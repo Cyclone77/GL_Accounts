@@ -1,6 +1,6 @@
 <template>
     <div class="invoiceall">
-        <eltablepage url="http://localhost:3000/tblpage">
+        <eltablepage url="http://localhost:3000/tblpage" msg="系统入账" >
             <el-table-column prop="rowindex" label="序号" fixed>
             </el-table-column>
             <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">

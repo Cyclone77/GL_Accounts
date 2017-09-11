@@ -6,7 +6,7 @@
         </div>
         <div class="credittbl">
             <div class="tblcontent">
-                <eltablepage url="http://localhost:3000/tblpage">
+                <eltablepage url="http://localhost:3000/tblpage" msg="应收账款">
                     <el-table-column prop="rowindex" label="序号" fixed>
                     </el-table-column>
                     <el-table-column prop="applicationtime" label="申请时间" width="120">
