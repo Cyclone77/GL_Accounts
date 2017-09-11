@@ -74,6 +74,9 @@ export default {
     components: {
         eltablepage
     },
+    beforeUpdate(){
+        
+    },
     mounted() {
         axios.get('http://localhost:3000/SurplusData', {
             timeout: 5000
@@ -91,7 +94,7 @@ export default {
     },
     methods: {
         barchange: function(value) {
-            console.log('选中了', value);
+            console.log('选中了', this);
             let subroute = { "全部": "all", "系统": "system", "手填": "handment" },
                 routpath = subroute[value] || "";
             this.$router.push(`/invoice/${routpath}`);
