@@ -1,7 +1,7 @@
 <template>
     <div class="credit">
         <div class="core">
-            <el-button type="primary" icon="plus">增加</el-button>
+            <el-button type="primary" icon="plus" @click="add">增加</el-button>
             <el-button type="primary" icon="upload2">导入</el-button>
         </div>
         <div class="credittbl">
@@ -54,6 +54,11 @@ export default {
     },
     components: {
         eltablepage
+    },
+    methods: {
+        add: function() {
+            this.$router.push("/credit/add");
+        }
     }
 }
 </script>

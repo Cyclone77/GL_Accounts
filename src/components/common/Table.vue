@@ -50,11 +50,11 @@ export default {
             this.msg = this.msg || "";
             //取数
 
-            this.loading = true;
+            //this.loading = true;
             axios.get(this.url + "?_start=" + ((send.pageIndex - 1) * send.pageSize) + "&_limit=" + send.pageSize, {
                 timeout: 5000
             }).then(response => {
-                this.loading = false;
+                //this.loading = false;
                 this.sourceData = response.data;
                 this.sourceTotal = 18;
                 console.log("执行了表格取数");

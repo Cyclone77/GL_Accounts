@@ -3,17 +3,18 @@ import Router from 'vue-router'
 
 import Home from '@/components/page/Home'
 
-import Invoice from '@/components/page/Invoice'
-import InvoiceAll from '@/components/page/InvoiceChild/All'
-import InvoiceSystem from '@/components/page/InvoiceChild/System'
-import InvoiceHandment from '@/components/page/InvoiceChild/Handment'
+import Invoice from '@/components/page/Invoice/Default'
+import InvoiceAll from '@/components/page/Invoice/All'
+import InvoiceSystem from '@/components/page/Invoice/System'
+import InvoiceHandment from '@/components/page/Invoice/Handment'
 
-import Credit from '@/components/page/Credit'
+import Credit from '@/components/page/Credit/Default'
+import CreditAdd from '@/components/page/Credit/Add'
 
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    //mode: 'history',
     routes: [{
         path: '/',
         name: 'Home',
@@ -36,5 +37,9 @@ export default new Router({
         path: '/credit',
         name: 'Credit',
         component: Credit
+    }, {
+        path: '/credit/add',
+        name: 'CreditAdd',
+        component: CreditAdd
     }]
 })

@@ -1,3 +1,8 @@
+.invoice {
+    overflow: auto;
+    height: 100%;
+}
+
 .invoice .panel {
     background-color: #fff;
 }
