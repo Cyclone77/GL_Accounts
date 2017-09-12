@@ -25,6 +25,7 @@ export default {
     data: function() {
         return {
             sourceData: [],
+            allData: [],
             sourceTotal: 100,
             pageIndex: 1,
             pageSize: 5,
@@ -36,35 +37,42 @@ export default {
             if (this.pageSize === size) return;
             this.pageSize = size;
             this.pageIndex = 1;
-            this.fetch(this.pageIndex, size);
+            this.structure(this.pageIndex, size);
         },
         handleIndexChange: function(index) {
             if (this.pageIndex === index) return;
             this.pageIndex = index;
-            this.fetch(index, this.pageSize);
+            this.structure(index, this.pageSize);
         },
         fetch: function(index, size) {
-            var send = this.params || {};
-            send.pageIndex = index || 1;
-            send.pageSize = size || 5;
             this.msg = this.msg || "";
             //取数
 
-            //this.loading = true;
-            axios.get(this.url + "?_start=" + ((send.pageIndex - 1) * send.pageSize) + "&_limit=" + send.pageSize, {
+            this.loading = true;
+            axios.get(this.url, {
                 timeout: 5000
             }).then(response => {
-                //this.loading = false;
-                this.sourceData = response.data;
-                this.sourceTotal = 18;
+                this.loading = false;
+                this.allData = response.data;
+                //this.sourceTotal = 18;
+                this.structure();
                 console.log("执行了表格取数");
             }).catch(error => {
                 console.log(error);
                 this.$notify.error({
                     title: '错误',
-                    message: `拉取${this.msg}信息超时！`
+                    message: `拉取${this.msg}信息失败！`
                 });
             })
+        },
+        structure() {
+            if (this.allData.length > this.pageSize) {
+                //分页数
+                this.sourceTotal = Math.ceil(this.allData.length); 
+                console.log(this.pageIndex * this.pageSize);
+                //通过当前页数筛选出表格当前显示数据
+                this.sourceData = this.allData.slice((this.pageSize * (this.pageIndex - 1)), (this.pageIndex * this.pageSize));
+            }
         }
     }
 }

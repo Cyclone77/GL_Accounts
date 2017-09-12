@@ -6,26 +6,26 @@
         </div>
         <div class="credittbl">
             <div class="tblcontent">
-                <eltablepage url="http://localhost:3000/tblpage" msg="应收账款">
-                    <el-table-column prop="rowindex" label="序号" fixed>
+                <eltablepage url="http://www.51gl.com/wxapp/api/yszk" msg="应收账款">
+                    <el-table-column prop="Id" label="序号" fixed>
                     </el-table-column>
-                    <el-table-column prop="applicationtime" label="申请时间" width="120">
+                    <el-table-column prop="ApplicationDate" label="申请时间" width="120">
                     </el-table-column>
-                    <el-table-column prop="applicationpsn" label="申请人">
+                    <el-table-column prop="Applicant" label="申请人">
                     </el-table-column>
-                    <el-table-column prop="tickettime" label="要求票面时间" width="140">
+                    <el-table-column prop="RequiredDate" label="要求票面时间" width="140">
                     </el-table-column>
-                    <el-table-column prop="ticketunit" label="开票单位" width="100">
+                    <el-table-column prop="Customer" label="开票单位" width="100">
                     </el-table-column>
-                    <el-table-column prop="comeunit" label="出票单位" width="100">
+                    <el-table-column prop="ChuPiaoDanWei" label="出票单位" width="100">
                     </el-table-column>
-                    <el-table-column prop="ticketcon" label="开票内容" width="100">
+                    <el-table-column prop="KaiPiaoNeiRong" label="开票内容" width="100">
                     </el-table-column>
-                    <el-table-column prop="Subprime" label="贷品">
+                    <el-table-column prop="WuPing" label="贷品">
                     </el-table-column>
-                    <el-table-column prop="gathering" label="收款">
+                    <el-table-column prop="ShouKuanZhuangTai" label="收款">
                     </el-table-column>
-                    <el-table-column prop="area" label="地区">
+                    <el-table-column prop="Area" label="地区">
                     </el-table-column>
                     <el-table-column prop="source" label="来源">
                     </el-table-column>

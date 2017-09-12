@@ -21,7 +21,7 @@
                         </el-checkbox-group>
                     </el-form-item>
                     <el-form-item label="汇款单位账号">
-                        <el-input v-model="form.name"></el-input>
+                        <el-input v-model="form.Customer"></el-input>
                     </el-form-item>
                     <el-form-item label="汇款单位名称">
                         <el-input v-model="form.name"></el-input>
