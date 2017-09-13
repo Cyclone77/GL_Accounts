@@ -7,7 +7,7 @@
         <div class="credittbl">
             <div class="tblcontent">
                 <eltablepage url="http://www.51gl.com/wxapp/api/yszk" msg="应收账款">
-                    <el-table-column prop="Id" label="序号" fixed>
+                    <el-table-column prop="Id" label="序号">
                     </el-table-column>
                     <el-table-column prop="ApplicationDate" label="申请时间" width="120">
                     </el-table-column>
