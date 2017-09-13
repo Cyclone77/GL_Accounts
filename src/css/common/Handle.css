@@ -1,19 +1,22 @@
 .handle {
-    line-height: 50px;
+    line-height: 3.75rem;
+    background-color: #03163c;
 }
 
 .handle .logo {
-    width: 200px;
+    width: 12.5rem;
     height: 100%;
     display: block;
     float: left;
+    background-color: #f63c42;
+    position: relative;
 }
 
 .handle .title {
     display: block;
     float: left;
     color: #fff;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: bold;
     padding-left: 20px;
 }
@@ -24,5 +27,5 @@
 }
 
 .handle .el-button {
-    color: #fff;
+    color: #A1b6e6;
 }

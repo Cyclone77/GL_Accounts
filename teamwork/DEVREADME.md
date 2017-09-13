@@ -1,3 +1,8 @@
+# 开发约定
+
+- js 用es6
+- 单位用 rem 或者 em
+
 # 开发过程遇到的问题
 
 ## 路由
@@ -18,6 +23,34 @@ this.$router.push(`路由路径`);
 
 @import '~@/css/index.css';
 
+```
+
+## 加载图片
+首先，如果使用的是img标签那么可以这样
+
+``` javascript
+data () {
+    return {
+        img: require('@/path/to/your/source')
+    }
+}
+
+//然后在template中
+<img :src="img" />
+
+data () {
+    return {
+        img: require('@/path/to/your/source')
+    }
+}
+
+//可以这样
+
+<div :style="{backgroundImage: 'url(' + img + ')'}"></div>
+
+或者直接在css中定义
+
+background-image: url('path/to/your/source');
 ```
 
 ## 定义组件

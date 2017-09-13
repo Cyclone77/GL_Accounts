@@ -4,7 +4,7 @@
             <slot></slot>
         </el-table>
         <div style="height:12px"></div>
-        <el-pagination @size-change="handleSizeChange" @current-change="handleIndexChange" :page-size="pageSize" :page-sizes="[5, 10, 20, 50]" :current-page="pageIndex" layout="total,sizes, prev, pager, next" :total="sourceTotal">
+        <el-pagination v-show="paginshow" @size-change="handleSizeChange" @current-change="handleIndexChange" :page-size="pageSize" :page-sizes="[5, 10, 20, 50]" :current-page="pageIndex" layout="total,sizes, prev, pager, next" :total="sourceTotal">
         </el-pagination>
     </div>
 </template>
@@ -29,7 +29,8 @@ export default {
             sourceTotal: 100,
             pageIndex: 1,
             pageSize: 5,
-            loading: false
+            loading: false,
+            paginshow: false
         }
     },
     methods: {
@@ -52,12 +53,14 @@ export default {
             axios.get(this.url, {
                 timeout: 5000
             }).then(response => {
-                this.loading = false;
                 this.allData = response.data;
                 //this.sourceTotal = 18;
                 this.structure();
+                this.loading = false;
+                this.paginshow = true;
                 console.log("执行了表格取数");
             }).catch(error => {
+                this.loading = false;
                 console.log(error);
                 this.$notify.error({
                     title: '错误',

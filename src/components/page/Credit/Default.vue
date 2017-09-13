@@ -2,11 +2,13 @@
     <div class="credit">
         <div class="core">
             <el-button type="primary" icon="plus" @click="add">增加</el-button>
-            <el-button type="primary" icon="upload2">导入</el-button>
+            <el-button icon="upload2">导入</el-button>
+            <el-button icon="edit">对应开票申请</el-button>
+            <el-button icon="check">确认收款</el-button>
         </div>
         <div class="credittbl">
             <div class="tblcontent">
-                <eltablepage url="http://www.51gl.com/wxapp/api/yszk" msg="应收账款">
+                <eltablepage :url="tblUrl" msg="应收账款">
                     <el-table-column prop="Id" label="序号">
                     </el-table-column>
                     <el-table-column prop="ApplicationDate" label="申请时间" width="120">
@@ -45,11 +47,13 @@
 
 <script>
 import eltablepage from '@/components/common/Table'
+import HttpPath from '@/components/HttpPath'
 
 export default {
     name: 'Credit',
     data() {
         return {
+            tblUrl: HttpPath.getCreaditTable
         }
     },
     components: {

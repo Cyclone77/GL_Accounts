@@ -26,7 +26,32 @@ a {
     right: 0;
     left: 0;
     bottom: 0;
-    margin: 0 auto;
+    margin: auto;
+}
+
+.headline {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #EFF2F7;
+}
+
+.headline .title {
+    margin-left: 20px;
+    padding-left: 10px;
+    display: inline-block;
+    border-left: 0.25rem solid #f63c42;
+    height: 30px;
+    line-height: 30px;
+    color: #41546d;
+    font-size: 1.125rem;
+}
+
+
+/*分割线*/
+
+.partingline {
+    width: 100%;
+    height: #EFF2F7;
 }
 
 .clearfix:after {
@@ -44,21 +69,20 @@ a {
 }
 
 #app .handle {
-    height: 50px;
-    background-color: #1D8CE0;
+    height: 3.75rem;
 }
 
 #app .bottom-panel {
-    top: 50px;
+    top: 3.75rem;
 }
 
 .left {
     position: relative;
     float: left;
-    width: 200px;
+    width: 12.5rem;
     /* 数值核心1 */
     height: 100%;
-    margin-right: -200px;
+    margin-right: -12.5rem;
 }
 
 .right {
@@ -68,24 +92,39 @@ a {
 }
 
 .right-content {
-    margin-left: 200px;
+    margin-left: 12.5rem;
     /* 数值核心3 */
     height: 100%;
-    background-color: #EFF2F7;
+    background-color: #edf4f9;
     position: relative;
 }
 
 .right-content .area {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    right: 10px;
+    top: 0.875rem;
+    left: 0.875rem;
+    bottom: 0.875rem;
+    right: 0.875rem;
+}
+
+
+/*element公用样式修改*/
+
+.el-button--primary,
+.el-button--primary:hover {
+    background-color: #f63c42;
+    border-color: #f63c42;
+}
+
+.el-button--default,
+.el-button--default:hover {
+    background-color: #F6FAf7;
+    border-color: #D9DDE3;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px
+    width: 0.625rem;
+    height: 0.625rem;
 }
 
 ::-webkit-scrollbar-track {
