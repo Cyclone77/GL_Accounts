@@ -13,13 +13,11 @@
                     </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item>修改信息</el-dropdown-item>
+                        <el-dropdown-item>注销</el-dropdown-item>
                         <el-dropdown-item divided>返回主页</el-dropdown-item>
                         <el-dropdown-item>建议反馈</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
-            </div>
-            <div class="device">
-                <el-button type="text" icon="circle-cross">注销</el-button>
             </div>
         </div>
     </div>

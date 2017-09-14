@@ -62,3 +62,13 @@ background-image: url('path/to/your/source');
 ## 发布
 
 在`confing/index.js`内修改`assetsPublicPath: './'`为了让绝对路径改为相对路径。可以双击发布后的index.html直接访问。
+
+## 警告
+[Bug Report] Vue@2.2.x 增加了v-for丢失key的警告，是否可将文档中的key都加上以消除警告？
+https://github.com/ElemeFE/element/issues/4137
+
+``` javascript
+<el-tag v-for="tag in tags">
+=>
+<el-tag v-for="(tag, index) in tags" :key="index">
+```

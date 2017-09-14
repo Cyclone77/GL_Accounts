@@ -14,7 +14,7 @@
 
 /*金额管理*/
 
-.invoice .moneytbl {
+.invoice .moneyList {
     padding: 1.25rem;
 }
 
@@ -22,7 +22,7 @@
 /*发票剩余*/
 
 .invoice .surplus {
-    margin-left: 1.6rem;
+    margin-left: 1rem;
     background-color: #fff;
 }
 

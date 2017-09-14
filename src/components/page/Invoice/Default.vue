@@ -1,25 +1,41 @@
 <template>
     <div class="invoice">
         <el-row>
-            <el-col :span="16">
+            <el-col :span="18">
                 <!-- 金额管理 -->
                 <div class="moneyopt panel">
                     <div class="headline">
                         <p class="title">金额管理</p>
                     </div>
-                    <div class="moneytbl">
-                        <el-table :data="tableData" stripe style="width: 100%">
-                            <el-table-column prop="date" label="日期" width="180">
-                            </el-table-column>
-                            <el-table-column prop="name" label="姓名" width="180">
-                            </el-table-column>
-                            <el-table-column prop="address" label="地址">
-                            </el-table-column>
-                        </el-table>
+                    <div class="moneyList">
+                        <el-row :gutter="10">
+                            <el-col :span="6" v-for="(item,index) in moneyMsg" :key="index">
+                                <div class="classify">
+                                    <div class="title" :style="{ borderTop: '0.125rem solid '+ item.theme.fontcolor, backgroundColor: item.theme.titbgcolor }">
+                                        <span v-text="item.name" :style="{ color: item.theme.fontcolor }"></span>
+                                    </div>
+                                    <div class="specific clearfix">
+                                        <el-col :span="12">
+                                            <p class="usable" v-text="item.usable"></p>
+                                            <p>可用金额（元）</p>
+                                        </el-col>
+                                        <el-col :span="12">
+                                            <p class="applyfor" v-text="item.applyfor"></p>
+                                            <p>申请金额（元）</p>
+                                        </el-col>
+                                    </div>
+                                    <div class="difference">
+                                        <span class="sign"></span>
+                                        <span class="explain">金额差值（元）</span>
+                                        <span v-text="item.difference"></span>
+                                    </div>
+                                </div>
+                            </el-col>
+                        </el-row>
                     </div>
                 </div>
             </el-col>
-            <el-col :span="8">
+            <el-col :span="6">
                 <!-- 发票剩余 -->
                 <div class="surplus panel">
                     <div class="headline">
@@ -55,7 +71,7 @@
                             <el-radio-button label="手填"></el-radio-button>
                         </el-radio-group>
                         <div class="syschunktbl">
-                            <eltablepage url="http://localhost:3000/tblpage" msg="系统入账">
+                            <eltablepage :url="chunktblData" msg="系统入账">
                                 <el-table-column prop="rowindex" label="序号" fixed>
                                 </el-table-column>
                                 <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">
@@ -99,9 +115,10 @@
 <script>
 import axios from 'axios'
 import eltablepage from '@/components/common/Table'
+import HttpPath from '@/components/HttpPath'
 
 export default {
-    name: 'hello',
+    name: 'Invoice',
     components: {
         eltablepage
     },
@@ -122,32 +139,59 @@ export default {
         })
     },
     methods: {
-        barchange: function(value) {
+        barchange(value) {
             console.log('选中了', this);
+        },
+        filterTag(value, row) {
+            return row.tag === value;
+        },
+        handleClick(){
+
         }
     },
     data() {
         return {
-            msg: '开票申请',
-            tableData: [{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
+            chunktblData: HttpPath.getChunkTable,
+            moneyMsg: [{
+                name: "四川",
+                usable: 101980,
+                applyfor: 98765,
+                difference: 3215,
+                theme: {
+                    fontcolor: "#359ff9",
+                    titbgcolor: "#eaf6fd"
+                }
             }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
+                name: "成都",
+                usable: -9981,
+                applyfor: 8762,
+                difference: -18743,
+                theme: {
+                    fontcolor: "#f73b42",
+                    titbgcolor: "#fdedeb"
+                }
             }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1519 弄'
+                name: "广力行",
+                usable: 9987,
+                applyfor: 19987,
+                difference: -10000,
+                theme: {
+                    fontcolor: "#5dc5a3",
+                    titbgcolor: "#edf9f5"
+                }
             }, {
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1516 弄'
+                name: "未说明金额",
+                usable: -13565,
+                applyfor: 100000,
+                difference: -23565,
+                theme: {
+                    fontcolor: "#8083db",
+                    titbgcolor: "#f1f3fb"
+                }
             }],
+            msg: '开票申请',
             tblSurplusData: [],
-            //loading: true,
+            chunkTime: [{ text: '家', value: '家' }, { text: '公司', value: '公司' }],
             ccountradio: '全部'
         }
     }
@@ -159,5 +203,52 @@ export default {
 @import '~@/css/page/Invoice.css';
 .title {
     font-weight: bold;
+}
+
+.moneyList{
+    overflow-x: auto;
+}
+.classify {
+    border: 0.0625rem solid #bbcce3;
+    border-top: none;
+    height: 13rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.classify .title {
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+}
+
+.classify .specific{
+    position: absolute;
+    top: 4.375rem;
+    bottom: 3.2rem;
+    left: 0;
+    right: 0;
+}
+.classify .specific p{
+    text-align: center;
+}
+
+.classify .difference {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    text-align: center;
+}
+.classify .difference span{
+    display: inline-block;
+}
+
+.classify .sign{
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: #bbcce3;
 }
 </style>
