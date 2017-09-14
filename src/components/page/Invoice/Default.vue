@@ -55,7 +55,38 @@
                             <el-radio-button label="手填"></el-radio-button>
                         </el-radio-group>
                         <div class="syschunktbl">
-                            <router-view></router-view>
+                            <eltablepage url="http://localhost:3000/tblpage" msg="系统入账">
+                                <el-table-column prop="rowindex" label="序号" fixed>
+                                </el-table-column>
+                                <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">
+                                </el-table-column>
+                                <el-table-column prop="applicationpsn" label="申请人">
+                                </el-table-column>
+                                <el-table-column prop="tickettime" label="要求票面时间" width="140">
+                                </el-table-column>
+                                <el-table-column prop="ticketunit" label="开票单位" width="100">
+                                </el-table-column>
+                                <el-table-column prop="comeunit" label="出票单位" width="100">
+                                </el-table-column>
+                                <el-table-column prop="ticketcon" label="开票内容" width="100">
+                                </el-table-column>
+                                <el-table-column prop="Subprime" label="贷品">
+                                </el-table-column>
+                                <el-table-column prop="gathering" label="收款">
+                                </el-table-column>
+                                <el-table-column prop="area" label="地区">
+                                </el-table-column>
+                                <el-table-column prop="source" label="来源">
+                                </el-table-column>
+                                <el-table-column prop="way" label="方式">
+                                </el-table-column>
+                                <el-table-column fixed="right" label="操作" width="100">
+                                    <template scope="scope">
+                                        <el-button @click="handleClick" type="text" size="small">审核</el-button>
+                                        <el-button type="text" size="small">确认</el-button>
+                                    </template>
+                                </el-table-column>
+                            </eltablepage>
                         </div>
                     </div>
                 </div>
@@ -74,8 +105,8 @@ export default {
     components: {
         eltablepage
     },
-    beforeUpdate(){
-        
+    beforeUpdate() {
+
     },
     mounted() {
         axios.get('http://localhost:3000/SurplusData', {
@@ -89,15 +120,10 @@ export default {
                 message: '拉取\'发票剩余\'信息超时！'
             });
         })
-
-        this.$router.push(`/invoice/all`);
     },
     methods: {
         barchange: function(value) {
             console.log('选中了', this);
-            let subroute = { "全部": "all", "系统": "system", "手填": "handment" },
-                routpath = subroute[value] || "";
-            this.$router.push(`/invoice/${routpath}`);
         }
     },
     data() {

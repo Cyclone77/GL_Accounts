@@ -13,45 +13,72 @@
             <div class="fromlist">
                 <el-form ref="form" :model="form" label-width="8rem">
                     <el-form-item label="收款渠道：">
-                        <el-radio-group v-model="form.channel" @change="channelChange">
-                            <el-radio label="1">广力行</el-radio>
-                            <el-radio label="2">成都</el-radio>
-                            <el-radio label="3">四川</el-radio>
-                            <el-radio label="4">支付宝</el-radio>
-                            <el-radio label="5">农行</el-radio>
-                            <el-radio label="6">微信</el-radio>
-                            <el-radio label="7">现金</el-radio>
-                        </el-radio-group>
+                        <el-col :span="10">
+                            <el-radio-group v-model="form.channel" @change="channelChange">
+                                <el-radio label="1">广力行</el-radio>
+                                <el-radio label="2">成都</el-radio>
+                                <el-radio label="3">四川</el-radio>
+                                <el-radio label="4">支付宝</el-radio>
+                                <el-radio label="5">农行</el-radio>
+                                <el-radio label="6">微信</el-radio>
+                                <el-radio label="7">现金</el-radio>
+                            </el-radio-group>
+                        </el-col>
                     </el-form-item>
                 </el-form>
                 <el-form ref="form" :model="form" label-width="8rem" v-if="payway">
                     <el-form-item label="汇款单位账号：">
-                        <el-input v-model="form.Customer"></el-input>
+                        <el-col :span="6">
+                            <el-input v-model="form.Customer"></el-input>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="汇款单位名称：">
-                        <el-input v-model="form.name"></el-input>
+                        <el-col :span="6">
+                            <el-input v-model="form.name"></el-input>
+                        </el-col>
+                        <el-col :span="1">&ensp;</el-col>
+                        <el-col :span="6">
+                            <el-input v-model="form.name"></el-input>
+                        </el-col>
+                        <el-col :span="1">
+                            <el-button type="text" class="puttbtn">查看</el-button>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="汇款金额：">
                         <el-col :span="6">
-                            <el-input v-model="form.name"></el-input>
+                            <el-col :span="11">
+                                <el-input v-model="form.name"></el-input>
+                            </el-col>
+                            <el-col class="line" :span="2">-</el-col>
+                            <el-col :span="11">
+                                <el-input v-model="form.name"></el-input>
+                            </el-col>
                         </el-col>
-                        <el-col class="line" :span="2">-</el-col>
-                        <el-col :span="6">
-                            <el-input v-model="form.name"></el-input>
-                        </el-col>
-                        <el-col class="line" :span="4">差额</el-col>
-                        <el-col :span="6">
-                            <el-input v-model="form.name"></el-input>
+                        <el-col :span="1">&ensp;</el-col>
+                        <el-col :span="4">
+                            <el-col class="line" :span="8">差额</el-col>
+                            <el-col :span="16">
+                                <el-input v-model="form.name"></el-input>
+                            </el-col>
                         </el-col>
                     </el-form-item>
                     <el-form-item label="到款时间：">
-                        <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
+                        <el-col :span="6">
+                            <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="备注：">
-                        <el-input type="textarea" v-model="form.desc"></el-input>
+                        <el-col :span="12">
+                            <el-input type="textarea" v-model="form.desc"></el-input>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="影印件：">
-                        <el-input></el-input>
+                        <el-col :span="6">
+                            <el-input></el-input>
+                        </el-col>
+                        <el-col :span="1">
+                            <el-button type="text" class="puttbtn">拍摄</el-button>
+                        </el-col>
                     </el-form-item>
                     <el-form-item>
                         <el-button>取消</el-button>
@@ -67,7 +94,7 @@
                         <el-input v-model="form.name"></el-input>
                     </el-form-item>
                     <el-form-item label="收款金额：">
-                         <el-input v-model="form.name"></el-input>
+                        <el-input v-model="form.name"></el-input>
                     </el-form-item>
                     <el-form-item label="收款金额说明：">
                         <el-input type="textarea" v-model="form.desc"></el-input>
@@ -153,19 +180,27 @@ export default {
 }
 
 .fromlist {
-    width: 35rem;
+    /* width: 35rem; */
     padding: 1.5rem;
 }
 
 .el-radio-group .el-radio {
     float: left;
     width: 7.5rem;
-    padding-right: 1.25rem;
+    padding-right: 1rem;
     margin: 0.25rem 0;
     padding: 0;
 }
 
 .line {
     text-align: center;
+}
+
+.putt {
+    width: 17rem;
+}
+
+.puttbtn {
+    margin-left: 0.5rem;
 }
 </style>

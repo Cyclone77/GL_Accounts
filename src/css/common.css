@@ -46,6 +46,19 @@ a {
     font-size: 1.125rem;
 }
 
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.alginleft {
+    text-align: left
+}
+
 
 /*分割线*/
 
@@ -105,21 +118,6 @@ a {
     left: 0.875rem;
     bottom: 0.875rem;
     right: 0.875rem;
-}
-
-
-/*element公用样式修改*/
-
-.el-button--primary,
-.el-button--primary:hover {
-    background-color: #f63c42;
-    border-color: #f63c42;
-}
-
-.el-button--default,
-.el-button--default:hover {
-    background-color: #F6FAf7;
-    border-color: #D9DDE3;
 }
 
 ::-webkit-scrollbar {
