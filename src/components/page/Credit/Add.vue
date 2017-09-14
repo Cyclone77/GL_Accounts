@@ -88,28 +88,53 @@
 
                 <el-form ref="form" :model="form" label-width="8rem" v-if="!payway">
                     <el-form-item label="收款人：">
-                        <el-input v-model="form.Customer"></el-input>
+                        <el-col :span="6">
+                            <el-input v-model="form.Customer"></el-input>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="收款说明：">
-                        <el-input v-model="form.name"></el-input>
+                        <el-col :span="6">
+                            <el-input v-model="form.name"></el-input>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="收款金额：">
-                        <el-input v-model="form.name"></el-input>
+                        <el-col :span="6">
+                            <el-input v-model="form.name"></el-input>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="收款金额说明：">
-                        <el-input type="textarea" v-model="form.desc"></el-input>
+                        <el-col :span="12">
+                            <el-input type="textarea" v-model="form.desc"></el-input>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="缴款时间：">
-                        <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
+                        <el-col :span="6">
+                            <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="打印：">
-                        <el-input></el-input>
+                        <el-col :span="6">
+                            <el-input></el-input>
+                        </el-col>
+                        <el-col :span="1">
+                            <el-button type="text" class="puttbtn">打印</el-button>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="微信确认信息：">
-                        <el-input></el-input>
+                        <el-col :span="6">
+                            <el-input></el-input>
+                        </el-col>
+                        <el-col :span="1">
+                            <el-button type="text" class="puttbtn">查看</el-button>
+                        </el-col>
                     </el-form-item>
                     <el-form-item label="影印件：">
-                        <el-input></el-input>
+                        <el-col :span="6">
+                            <el-input></el-input>
+                        </el-col>
+                        <el-col :span="1">
+                            <el-button type="text" class="puttbtn">拍摄</el-button>
+                        </el-col>
                     </el-form-item>
                     <el-form-item>
                         <el-button>取消</el-button>
