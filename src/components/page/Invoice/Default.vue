@@ -4,7 +4,7 @@
             <el-col :span="16">
                 <!-- 金额管理 -->
                 <div class="moneyopt panel">
-                    <div class="paneltitle">
+                    <div class="headline">
                         <p class="title">金额管理</p>
                     </div>
                     <div class="moneytbl">
@@ -22,7 +22,7 @@
             <el-col :span="8">
                 <!-- 发票剩余 -->
                 <div class="surplus panel">
-                    <div class="paneltitle">
+                    <div class="headline">
                         <p class="title">发票剩余</p>
                     </div>
                     <div class="surplustbl">
@@ -44,7 +44,7 @@
             <el-col :span="24">
                 <!-- 系统入账 -->
                 <div class="sysaccount panel">
-                    <div class="paneltitle">
+                    <div class="headline">
                         <p class="title">系统入账</p>
                     </div>
                     <!-- 内容 -->

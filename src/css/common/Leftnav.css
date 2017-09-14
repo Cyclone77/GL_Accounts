@@ -8,7 +8,7 @@
 
 .nav .el-menu li.is-active::before {
     content: "";
-    width: 5px;
+    width: 0.25rem;
     display: inline-block;
     position: absolute;
     left: 0;

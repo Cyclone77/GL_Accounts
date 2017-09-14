@@ -18,12 +18,12 @@
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
-    padding-left: 20px;
+    padding-left: 1.25rem;
 }
 
 .handle .corebtn {
     float: right;
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 .handle .el-button {

@@ -1,6 +1,6 @@
 export default {
     /*
-     * 收款录入表格
+     * @return {JSON}
      */
-    getCreaditTable: 'http://www.51gl.com/wxapp/api/yszk'
-}
+    getCreaditTable: "http://www.51gl.com/wxapp/api/yszk"
+};

@@ -24,7 +24,7 @@
                         </el-radio-group>
                     </el-form-item>
                 </el-form>
-                <el-form ref="form" :model="form" label-width="8rem" v-show="payway">
+                <el-form ref="form" :model="form" label-width="8rem" v-if="payway">
                     <el-form-item label="汇款单位账号：">
                         <el-input v-model="form.Customer"></el-input>
                     </el-form-item>
@@ -59,7 +59,7 @@
                     </el-form-item>
                 </el-form>
 
-                <el-form ref="form" :model="form" label-width="8rem" v-show="!payway">
+                <el-form ref="form" :model="form" label-width="8rem" v-if="!payway">
                     <el-form-item label="收款人：">
                         <el-input v-model="form.Customer"></el-input>
                     </el-form-item>
@@ -137,7 +137,7 @@ export default {
 
 .breadcrumb {
     background-color: #fff;
-    padding: 24px;
+    padding: 1.5rem;
 }
 
 .formpanel {
@@ -153,14 +153,14 @@ export default {
 }
 
 .fromlist {
-    width: 560px;
-    padding: 24px;
+    width: 35rem;
+    padding: 1.5rem;
 }
 
 .el-radio-group .el-radio {
     float: left;
-    width: 120px;
-    padding-right: 20px;
+    width: 7.5rem;
+    padding-right: 1.25rem;
     margin: 0.25rem 0;
     padding: 0;
 }
