@@ -89,7 +89,7 @@
                 <el-form ref="form" :model="form" label-width="8rem" v-if="!payway">
                     <el-form-item label="收款人：">
                         <el-col :span="6">
-                            <el-input v-model="form.Customer"></el-input>
+                            <el-input v-model="form.customer"></el-input>
                         </el-col>
                     </el-form-item>
                     <el-form-item label="收款说明：">
@@ -153,13 +153,16 @@ export default {
         return {
             payway: true,
             form: {
+                //收款渠道
+                channel: '1',
+                //收款人
+                customer:'',
                 name: '',
                 region: '',
                 date1: '',
                 date2: '',
                 delivery: false,
                 type: [],
-                channel: '1',
                 desc: ''
             },
             title: "新建录入"
@@ -167,7 +170,7 @@ export default {
     },
     methods: {
         onSubmit() {
-            console.log('submit!');
+            console.log('submit!', this.form);
         },
         channelChange(val) {
             if (val === '7') {

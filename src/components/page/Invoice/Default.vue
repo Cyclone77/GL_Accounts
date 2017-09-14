@@ -145,7 +145,7 @@ export default {
         filterTag(value, row) {
             return row.tag === value;
         },
-        handleClick(){
+        handleClick() {
 
         }
     },
@@ -205,13 +205,14 @@ export default {
     font-weight: bold;
 }
 
-.moneyList{
+.moneyList {
     overflow-x: auto;
 }
+
 .classify {
     border: 0.0625rem solid #bbcce3;
     border-top: none;
-    height: 13rem;
+    height: 10.7rem;
     position: relative;
     overflow: hidden;
 }
@@ -222,14 +223,15 @@ export default {
     text-align: center;
 }
 
-.classify .specific{
+.classify .specific {
     position: absolute;
     top: 4.375rem;
     bottom: 3.2rem;
     left: 0;
     right: 0;
 }
-.classify .specific p{
+
+.classify .specific p {
     text-align: center;
 }
 
@@ -242,11 +244,12 @@ export default {
     line-height: 3.2rem;
     text-align: center;
 }
-.classify .difference span{
+
+.classify .difference span {
     display: inline-block;
 }
 
-.classify .sign{
+.classify .sign {
     height: 0.5rem;
     width: 0.5rem;
     background-color: #bbcce3;
