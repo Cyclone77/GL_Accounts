@@ -2,17 +2,17 @@
     <div class="nav">
         <el-menu :router="true" :default-active="defaultActive" class="el-menu-vertical-demo" @select="handleOpen">
             <el-menu-item index="/">
-                <i class="el-icon-document"></i>首页</el-menu-item>
+                <icon-svg icon-class="地球"></icon-svg>首页</el-menu-item>
             <el-menu-item index="/credit">
-                <i class="el-icon-date"></i>应收账款</el-menu-item>
+                <icon-svg icon-class="收款账单"></icon-svg>应收账款</el-menu-item>
             <el-menu-item index="/invoice">
-                <i class="el-icon-star-off"></i>开票申请</el-menu-item>
+                <icon-svg icon-class="申请"></icon-svg>开票申请</el-menu-item>
             <el-menu-item index="/forinvoice">
-                <i class="el-icon-edit"></i>代开发票</el-menu-item>
+                <icon-svg icon-class="代开发票"></icon-svg>代开发票</el-menu-item>
             <el-menu-item index="/yetinvoice">
-                <i class="el-icon-share"></i>已开发票</el-menu-item>
+                <icon-svg icon-class="已开发票"></icon-svg>已开发票</el-menu-item>
             <el-menu-item index="/performance">
-                <i class="el-icon-setting"></i>部门效绩</el-menu-item>
+                <icon-svg icon-class="部门"></icon-svg>部门效绩</el-menu-item>
         </el-menu>
     </div>
 </template>

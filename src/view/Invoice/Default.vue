@@ -43,13 +43,13 @@
                     </div>
                     <div class="surplustbl">
                         <el-table :data="tblSurplusData" stripe style="width: 100%">
-                            <el-table-column prop="address" label="">
+                            <el-table-column prop="CorporateName" label="">
                             </el-table-column>
-                            <el-table-column prop="centum" label="百" width="60">
+                            <el-table-column prop="BaiYuanBan" label="百" width="60">
                             </el-table-column>
-                            <el-table-column prop="thousand" label="千" width="60">
+                            <el-table-column prop="QianYuanBan" label="千" width="60">
                             </el-table-column>
-                            <el-table-column prop="tenthousand" label="万" width="60">
+                            <el-table-column prop="WanYuanBan" label="万" width="60">
                             </el-table-column>
                         </el-table>
                     </div>
@@ -113,9 +113,10 @@
 </template>
 
 <script>
+import HttpPath from '@/components/common/HttpPath'
+
 import axios from 'axios'
 import eltablepage from '@/components/element/Table'
-import HttpPath from '@/components/common/HttpPath'
 
 export default {
     name: 'Invoice',
@@ -126,7 +127,9 @@ export default {
 
     },
     mounted() {
-        axios.get(HttpPath.getSurplusData, {
+        let url = HttpPath.getSurplusData;
+        console.log(url,12121);
+        axios.get(url, {
             timeout: 5000
         }).then(response => {
             this.tblSurplusData = response.data;

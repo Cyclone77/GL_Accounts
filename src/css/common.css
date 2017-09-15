@@ -69,6 +69,11 @@ a {
     text-align: left
 }
 
+.svg-icon{
+    height: 1em;
+    width: 1em;
+    fill: currentColor; 
+}
 
 /*分割线*/
 

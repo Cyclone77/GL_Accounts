@@ -52,6 +52,7 @@ import HttpPath from '@/components/common/HttpPath'
 export default {
     name: 'Credit',
     data() {
+        console.log(HttpPath.getCreaditTable);
         return {
             tblUrl: HttpPath.getCreaditTable
         }

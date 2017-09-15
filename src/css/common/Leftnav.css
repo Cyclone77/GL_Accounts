@@ -2,8 +2,18 @@
     background-color: #fff;
 }
 
+.nav .el-menu-item .svg-icon{
+    margin-left: 0.35rem;
+    margin-right: 0.55rem;
+    font-size: 1rem;
+}
+
 .nav .el-menu li.is-active {
     background-color: #E5E9F2;
+}
+
+.nav .el-menu li.is-active .svg-icon{
+    fill: #f63c42;
 }
 
 .nav .el-menu li.is-active::before {

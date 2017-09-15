@@ -1,7 +1,7 @@
 <template>
   <div class="Home">
     <h1>{{ msg }}</h1>
-    <icon-svg :icon-class="iconPath"></icon-svg>
+    <icon-svg icon-class="404"></icon-svg>
   </div>
 </template>
 
@@ -10,7 +10,6 @@ export default {
   name: 'Home',
   data () {
     return {
-      iconPath: "person",
       msg: '首页'
     }
   }

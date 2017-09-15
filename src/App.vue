@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import leftnav from '@/components/layout/Leftnav'
-import handle from '@/components/layout/Handle'
+import leftnav from '@/view/layout/Leftnav'
+import handle from '@/view/layout/Handle'
 
 export default {
   name: 'app',

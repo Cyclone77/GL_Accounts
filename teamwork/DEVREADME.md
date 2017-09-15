@@ -79,6 +79,14 @@ build／webpack.base.conf.js下
     }
 }
 ```
+颜色更改：fill: red;
+如果svg的fill: currentColor设置后；则可以用color来改变颜色
+设置：svg的宽高，利用em单位的特点，根据font-size改变大小
+``` css
+height: 1em;
+width: 1em;
+```
+
 ## 定义组件
 
 ## 调试
