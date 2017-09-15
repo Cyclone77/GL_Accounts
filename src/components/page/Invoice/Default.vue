@@ -8,7 +8,7 @@
                         <p class="title">金额管理</p>
                     </div>
                     <div class="moneyList">
-                        <el-row :gutter="10">
+                        <el-row :gutter="20">
                             <el-col :span="6" v-for="(item,index) in moneyMsg" :key="index">
                                 <div class="classify">
                                     <div class="title" :style="{ borderTop: '0.125rem solid '+ item.theme.fontcolor, backgroundColor: item.theme.titbgcolor }">
@@ -201,10 +201,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import '~@/css/page/Invoice.css';
-.title {
-    font-weight: bold;
-}
-
 .moneyList {
     overflow-x: auto;
 }
@@ -212,7 +208,7 @@ export default {
 .classify {
     border: 0.0625rem solid #bbcce3;
     border-top: none;
-    height: 10.7rem;
+    height: 13rem;
     position: relative;
     overflow: hidden;
 }
