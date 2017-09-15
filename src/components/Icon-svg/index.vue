@@ -1,7 +1,5 @@
 <template>
-  <svg class="svg-icon" aria-hidden="true">
-    <use :xlink:href="iconName"></use>
-  </svg>
+  <img :src="iconName" alt="" class="icon">
 </template>
 
 <script>
@@ -15,8 +13,16 @@ export default {
   },
   computed: {
     iconName() {
-      return `#icon-${this.iconClass}`
+      return require(`@/icons/svg/${this.iconClass}.svg`)
     }
   }
 }
 </script>
+<style scoped>
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+</style>
