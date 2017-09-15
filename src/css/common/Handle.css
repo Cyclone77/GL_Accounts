@@ -21,6 +21,8 @@
     margin-left: 1.25rem;
     height: 100%;
     width: 15.25rem;
+    background-repeat: no-repeat;
+    background-position: left center;
 }
 
 .handle .corebtn {

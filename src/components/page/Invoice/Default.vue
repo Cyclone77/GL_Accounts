@@ -211,12 +211,15 @@ export default {
     height: 13rem;
     position: relative;
     overflow: hidden;
+    font-size: 0.875rem;
 }
 
 .classify .title {
     height: 2.375rem;
     line-height: 2.375rem;
     text-align: center;
+    font-size: 1.125rem;
+    font-weight: bold;
 }
 
 .classify .specific {
@@ -229,6 +232,10 @@ export default {
 
 .classify .specific p {
     text-align: center;
+}
+
+.classify .specific .usable,.classify .specific .applyfor{
+    font-size: 1.125rem;
 }
 
 .classify .difference {
