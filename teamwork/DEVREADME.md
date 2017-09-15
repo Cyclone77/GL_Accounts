@@ -52,6 +52,33 @@ data () {
 background-image: url('path/to/your/source');
 ```
 
+## 加载第三方字体图标
+参考链接：https://cisy.me/webpack-svg-sprite/
+###  安装 
+``` git
+npm install svg-sprite-loader --save-dev
+```
+### 配置
+build／webpack.base.conf.js下
+``` javascript
+//svg-sprite-loader 配置
+{
+    test: /\.svg$/,
+    loader: 'svg-sprite-loader',
+    include: [resolve('src/icons')],
+    options: {
+        symbolId: 'icon-[name]'
+    }
+},
+{
+    test: /\.(png|jpe?g|gif)(\?.*)?$/, ///\.(png|jpe?g|gif|svg)(\?.*)?$/ 默认的加载方法取消
+    loader: 'url-loader',
+    options: {
+        limit: 10000,
+        name: utils.assetsPath('img/[name].[hash:7].[ext]')
+    }
+}
+```
 ## 定义组件
 
 ## 调试

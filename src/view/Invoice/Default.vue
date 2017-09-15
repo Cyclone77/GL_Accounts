@@ -115,7 +115,7 @@
 <script>
 import axios from 'axios'
 import eltablepage from '@/components/element/Table'
-import HttpPath from '@/components/HttpPath'
+import HttpPath from '@/components/common/HttpPath'
 
 export default {
     name: 'Invoice',
@@ -126,7 +126,7 @@ export default {
 
     },
     mounted() {
-        axios.get('http://localhost:3000/SurplusData', {
+        axios.get(HttpPath.getSurplusData, {
             timeout: 5000
         }).then(response => {
             this.tblSurplusData = response.data;

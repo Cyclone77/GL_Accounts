@@ -47,7 +47,7 @@
 
 <script>
 import eltablepage from '@/components/element/Table'
-import HttpPath from '@/components/HttpPath'
+import HttpPath from '@/components/common/HttpPath'
 
 export default {
     name: 'Credit',
