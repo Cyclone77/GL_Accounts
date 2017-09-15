@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import eltablepage from '@/components/common/Table'
+import eltablepage from '@/components/layout/Table'
 
 export default {
     name: 'InvoiceAll',

@@ -114,7 +114,7 @@
 
 <script>
 import axios from 'axios'
-import eltablepage from '@/components/common/Table'
+import eltablepage from '@/components/element/Table'
 import HttpPath from '@/components/HttpPath'
 
 export default {
@@ -151,6 +151,7 @@ export default {
     },
     data() {
         return {
+            iconName: "person",
             chunktblData: HttpPath.getChunkTable,
             moneyMsg: [{
                 name: "四川",

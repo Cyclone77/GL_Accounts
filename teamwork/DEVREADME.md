@@ -45,7 +45,6 @@ data () {
 }
 
 //可以这样
-
 <div :style="{backgroundImage: 'url(' + img + ')'}"></div>
 
 或者直接在css中定义

@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/components/page/Home'
+import Home from '@/view/Home'
 
-import Invoice from '@/components/page/Invoice/Default'
+import Invoice from '@/view/Invoice/Default'
 
-import Credit from '@/components/page/Credit/Default'
-import CreditAdd from '@/components/page/Credit/Add'
+import Credit from '@/view/Credit/Default'
+import CreditAdd from '@/view/Credit/Add'
 
 Vue.use(Router)
 

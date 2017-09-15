@@ -9,6 +9,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      iconName: '404',
       msg: '首页'
     }
   }

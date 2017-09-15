@@ -34,9 +34,9 @@ export default {
     data() {
         return {
             username: "张三",
-            userpath: require('@/other/images/user.png'),
-            logoUrl: require('@/other/images/logo.png'),
-            img: require('@/other/images/title.png'),
+            userpath: require('@/assets/basic/user.png'),
+            logoUrl: require('@/assets/basic/logo.png'),
+            img: require('@/assets/basic/title.png'),
         }
     }
 }

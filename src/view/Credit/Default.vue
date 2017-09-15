@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import eltablepage from '@/components/common/Table'
+import eltablepage from '@/components/element/Table'
 import HttpPath from '@/components/HttpPath'
 
 export default {
