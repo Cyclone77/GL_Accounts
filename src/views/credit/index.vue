@@ -63,5 +63,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '~@/css/page/Credit.css';
+@import '~@/style/page/Credit.css';
 </style>

@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-@import '~@/css/common/Handle.css';
+@import '~@/style/common/Handle.css';
 .logo img {
     position: absolute;
     top: 0;

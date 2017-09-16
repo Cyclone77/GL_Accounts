@@ -32,7 +32,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '~@/css/common.css';
+@import '~@/style/common.css';
 .app-wrapper,
 .main-container {
   height: 100%;

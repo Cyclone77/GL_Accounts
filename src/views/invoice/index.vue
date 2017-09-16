@@ -195,7 +195,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '~@/css/page/Invoice.css';
+@import '~@/style/page/Invoice.css';
 .moneyList {
     overflow-x: auto;
 }

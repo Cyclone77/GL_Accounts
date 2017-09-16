@@ -37,5 +37,5 @@ export default {
 }
 </script>
 <style scoped>
-@import '~@/css/common/Leftnav.css'
+@import '~@/style/common/Leftnav.css'
 </style>
