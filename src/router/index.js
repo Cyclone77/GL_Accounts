@@ -1,12 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import Home from '@/view/Home'
-
-import Invoice from '@/view/Invoice/Default'
-
-import Credit from '@/view/Credit/Default'
-import CreditAdd from '@/view/Credit/Add'
+const _import = require('./_import_' + process.env.NODE_ENV)
+console.log(_import, process.env.NODE_ENV);
+import Layout from '@/views/layout/Layout'
 
 Vue.use(Router)
 
@@ -14,19 +10,26 @@ export default new Router({
     mode: 'history',
     routes: [{
         path: '/',
-        name: 'Home',
-        component: Home
-    }, {
-        path: '/invoice',
-        name: 'Invoice',
-        component: Invoice
+        name: '首页',
+        redirect: '/home',
+        component: Layout,
+        children: [{ path: 'home', component: _import('home/index') }]
     }, {
         path: '/credit',
-        name: 'Credit',
-        component: Credit
+        redirect: '/credit/index',
+        name: '应收账款',
+        component: Layout,
+        children: [
+            { path: 'index', component: _import('credit/index'), name: '应收账款预览' },
+            { path: 'add', component: _import('credit/add'), name: '应收账款增加' }
+        ]
     }, {
-        path: '/credit/add',
-        name: 'CreditAdd',
-        component: CreditAdd
+        path: '/invoice',
+        redirect: '/invoice/index',
+        name: '开票申请',
+        component: Layout,
+        children: [
+            { path: 'index', component: _import('invoice/index'), name: '发票管理 ' }
+        ]
     }]
 })
