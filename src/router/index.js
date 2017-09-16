@@ -34,7 +34,7 @@ export default new Router({
         children: [
             { path: 'index', component: _import('invoice/index'), name: '发票管理 ' },
             { path: 'view', component: _import('invoice/view'), name: '发票申请预览 ' },
-            { path: 'add', component: _import('invoice/add'), name: '发票申请预览 ' }
+            { path: 'add', component: _import('invoice/add'), name: '发票申请添加 ' }
         ]
     }]
 })

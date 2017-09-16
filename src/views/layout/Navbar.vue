@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <el-menu :router="true" :default-active="defaultActive" class="el-menu-vertical-demo" @select="handleOpen">
-            <el-menu-item index="/">
+            <el-menu-item index="/home">
                 <icon-svg icon-class="地球"></icon-svg>首页</el-menu-item>
             <el-menu-item index="/credit">
                 <icon-svg icon-class="收款账单"></icon-svg>应收账款</el-menu-item>

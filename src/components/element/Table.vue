@@ -57,7 +57,6 @@ export default {
                 this.structure();
                 this.loading = false;
                 this.paginshow = true;
-                console.log("执行了表格取数");
             }).catch(error => {
                 this.loading = false;
                 console.log(error);
@@ -70,8 +69,7 @@ export default {
         structure() {
             if (this.allData.length > this.pageSize) {
                 //分页数
-                this.sourceTotal = Math.ceil(this.allData.length); 
-                console.log(this.pageIndex * this.pageSize);
+                this.sourceTotal = Math.ceil(this.allData.length);
                 //通过当前页数筛选出表格当前显示数据
                 this.sourceData = this.allData.slice((this.pageSize * (this.pageIndex - 1)), (this.pageIndex * this.pageSize));
             }
