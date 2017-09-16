@@ -8,7 +8,7 @@
         </div>
         <div class="credittbl">
             <div class="tblcontent">
-                <eltablepage :url="tblUrl" msg="应收账款">
+                <gl-table :url="tblUrl" msg="应收账款">
                     <el-table-column prop="Id" label="序号">
                     </el-table-column>
                     <el-table-column prop="ApplicationDate" label="申请时间" width="120">
@@ -39,26 +39,19 @@
                             <el-button type="text" size="small">确认</el-button>
                         </template>
                     </el-table-column>
-                </eltablepage>
+                </gl-table>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import eltablepage from '@/components/element/Table'
-import HttpPath from '@/components/common/HttpPath'
-
 export default {
     name: 'credit',
     data() {
-        console.log(HttpPath.getCreaditTable);
         return {
-            tblUrl: HttpPath.getCreaditTable
+            tblUrl: this.$httpurl.getCreaditTable
         }
-    },
-    components: {
-        eltablepage
     },
     methods: {
         add: function() {

@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
     name: 'eltablepage',
@@ -50,7 +49,7 @@ export default {
             //取数
 
             this.loading = true;
-            axios.get(this.url, {
+            this.$axios.get(this.url, {
                 timeout: 5000
             }).then(response => {
                 this.allData = response.data;

@@ -6,12 +6,19 @@ import router from './router'
 
 import ElementUI from 'element-ui'
 import '../theme/index.css'
+Vue.use(ElementUI);
 
-import './icons'
+import './icons' //svg图标
+import '@/components' //组件
+
+//全局API路径
+import HttpPath from '@/components/common/HttpPath'
+Vue.prototype.$httpurl = HttpPath;
+
+import axios from 'axios';
+Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
-
-Vue.use(ElementUI);
 
 
 /* eslint-disable no-new */

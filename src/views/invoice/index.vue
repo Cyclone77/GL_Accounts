@@ -71,7 +71,7 @@
                             <el-radio-button label="手填"></el-radio-button>
                         </el-radio-group>
                         <div class="syschunktbl">
-                            <eltablepage :url="chunktblData" msg="系统入账">
+                            <gl-table :url="chunktblData" msg="系统入账">
                                 <el-table-column prop="rowindex" label="序号" fixed>
                                 </el-table-column>
                                 <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">
@@ -102,7 +102,7 @@
                                         <el-button type="text" size="small">确认</el-button>
                                     </template>
                                 </el-table-column>
-                            </eltablepage>
+                            </gl-table>
                         </div>
                     </div>
                 </div>
@@ -113,23 +113,14 @@
 </template>
 
 <script>
-import HttpPath from '@/components/common/HttpPath'
-
-import axios from 'axios'
-import eltablepage from '@/components/element/Table'
 
 export default {
     name: 'Invoice',
-    components: {
-        eltablepage
-    },
     beforeUpdate() {
 
     },
     mounted() {
-        let url = HttpPath.getSurplusData;
-        console.log(url,12121);
-        axios.get(url, {
+        this.$axios.get(this.$httpurl.getSurplusData, {
             timeout: 5000
         }).then(response => {
             this.tblSurplusData = response.data;
@@ -155,7 +146,7 @@ export default {
     data() {
         return {
             iconName: "person",
-            chunktblData: HttpPath.getChunkTable,
+            chunktblData: this.$httpurl.getChunkTable,
             moneyMsg: [{
                 name: "四川",
                 usable: 101980,
@@ -238,7 +229,8 @@ export default {
     text-align: center;
 }
 
-.classify .specific .usable,.classify .specific .applyfor{
+.classify .specific .usable,
+.classify .specific .applyfor {
     font-size: 1.125rem;
 }
 
