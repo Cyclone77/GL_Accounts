@@ -120,7 +120,7 @@ export default {
 
     },
     mounted() {
-        this.$axios.get(this.$httpurl.getSurplusData, {
+        this.$axios.get(process.env.BASE_API + "availableInvoiceAmount", {
             timeout: 5000
         }).then(response => {
             this.tblSurplusData = response.data;

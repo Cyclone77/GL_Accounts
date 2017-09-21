@@ -1,4 +1,4 @@
-# VUE+Vue-Router+Element+Axios+JSON-server
+# VUE+Vue-Router+Vuex+Element+Axios+ES6
 
 ## 实现基本布局
 
