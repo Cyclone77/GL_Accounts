@@ -113,24 +113,27 @@
 </template>
 
 <script>
-
+import { getTable } from '@/api/invoice'
 export default {
     name: 'Invoice',
     beforeUpdate() {
 
     },
-    mounted() {
-        this.$axios.get(process.env.BASE_API + "availableInvoiceAmount", {
-            timeout: 5000
-        }).then(response => {
-            this.tblSurplusData = response.data;
-        }).catch(error => {
-            console.log(error);
-            this.$notify.error({
-                title: '错误',
-                message: '拉取\'发票剩余\'信息超时！'
-            });
+    created(){
+        getTable().then(data => {
+            this.tblSurplusData = data;
         })
+        // this.$axios.get(process.env.BASE_API + "availableInvoiceAmount", {
+        //     timeout: 5000
+        // }).then(response => {
+        //     this.tblSurplusData = response.data;
+        // }).catch(error => {
+        //     console.log(error);
+        //     this.$notify.error({
+        //         title: '错误',
+        //         message: '拉取\'发票剩余\'信息超时！'
+        //     });
+        // })
     },
     methods: {
         barchange(value) {
