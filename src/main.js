@@ -11,10 +11,6 @@ Vue.use(ElementUI);
 import './icons' //svg图标
 import '@/components' //组件
 
-//全局API路径
-import HttpPath from '@/components/common/HttpPath'
-Vue.prototype.$httpurl = HttpPath;
-
 import axios from 'axios';
 Vue.prototype.$axios = axios
 

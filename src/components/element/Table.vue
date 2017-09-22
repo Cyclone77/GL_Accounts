@@ -10,7 +10,7 @@
 </template>
 
 <script>
-
+import fetch from '@/utils/fetch'
 export default {
     name: 'eltablepage',
     props: {
@@ -49,10 +49,11 @@ export default {
             //取数
 
             this.loading = true;
-            this.$axios.get(this.url, {
-                timeout: 5000
-            }).then(response => {
-                this.allData = response.data;
+            fetch({
+                url: this.url,
+                method: 'get'
+            }).then(data => {
+                this.allData = data;
                 //this.sourceTotal = 18;
                 this.structure();
                 this.loading = false;

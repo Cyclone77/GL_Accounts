@@ -50,7 +50,7 @@ export default {
     name: 'credit',
     data() {
         return {
-            tblUrl: this.$httpurl.getCreaditTable
+            tblUrl: 'receivables'
         }
     },
     methods: {
