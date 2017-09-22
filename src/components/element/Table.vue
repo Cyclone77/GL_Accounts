@@ -45,6 +45,7 @@ export default {
             this.structure(index, this.pageSize);
         },
         fetch: function(index, size) {
+            if (this.allData && this.allData.length > 0) return;
             this.msg = this.msg || "";
             //取数
 

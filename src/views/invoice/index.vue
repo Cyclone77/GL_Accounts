@@ -71,7 +71,7 @@
                             <el-radio-button label="手填"></el-radio-button>
                         </el-radio-group>
                         <div class="syschunktbl">
-                            <gl-table :url="chunktblData" msg="系统入账">
+                            <gl-table :allData="chunktblData" msg="系统入账">
                                 <el-table-column prop="rowindex" label="序号" fixed>
                                 </el-table-column>
                                 <el-table-column prop="applicationtime" label="申请时间" :filters="chunkTime" :filter-method="filterTag" width="120">
@@ -122,18 +122,19 @@ export default {
     created(){
         getTable().then(data => {
             this.tblSurplusData = data;
+        });
+        
+        this.$axios.get("https://easy-mock.com/mock/59c37dc2e0dc663341b35a80/example/mock", {
+            timeout: 5000
+        }).then(response => {
+            this.chunktblData = response.data.data.projects;
+        }).catch(error => {
+            console.log(error);
+            this.$notify.error({
+                title: '错误',
+                message: '拉取\'系统入账\'信息超时！'
+            });
         })
-        // this.$axios.get(process.env.BASE_API + "availableInvoiceAmount", {
-        //     timeout: 5000
-        // }).then(response => {
-        //     this.tblSurplusData = response.data;
-        // }).catch(error => {
-        //     console.log(error);
-        //     this.$notify.error({
-        //         title: '错误',
-        //         message: '拉取\'发票剩余\'信息超时！'
-        //     });
-        // })
     },
     methods: {
         barchange(value) {
@@ -149,7 +150,7 @@ export default {
     data() {
         return {
             iconName: "person",
-            chunktblData: this.$httpurl.getChunkTable,
+            chunktblData: [],
             moneyMsg: [{
                 name: "四川",
                 usable: 101980,
