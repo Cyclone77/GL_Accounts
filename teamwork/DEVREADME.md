@@ -90,8 +90,19 @@ width: 1em;
 ## 定义组件
 自定义组件如果表情名是系统标签（踩坑是遇到HTML5的标签）则会提示找不到组件。
 
+## 引用bootstrap
+
+打包后字体路径错误解决：https://segmentfault.com/q/1010000008430227
+main.js引用
+``` javascript
+import '@/assets/css/bootstrap.min.css'
+import 'bootstrap'
+```
+
 ## webpack config 
 config内的js设置后要重启服务，才能生效
+dev.env.js是开发模式路径
+prod.env.js是打包模式路径
 
 ## 调试
 
