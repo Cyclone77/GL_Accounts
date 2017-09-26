@@ -12,6 +12,15 @@
 this.$router;
 this.$router.push(`路由路径`);
 ```
+要链接到一个命名路由，可以给 router-link 的 to 属性传一个对象：
+``` javascript
+<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+```
+这跟代码调用 router.push() 是一回事：
+``` javascript
+router.push({ name: 'user', params: { userId: 123 }})
+```
+这里的`name`是路由或者自路由的name属性
 
 ## 加载CSS
 如果是引入CSS
@@ -93,6 +102,7 @@ width: 1em;
 ## 引用bootstrap
 
 打包后字体路径错误解决：https://segmentfault.com/q/1010000008430227
+
 main.js引用
 ``` javascript
 import '@/assets/css/bootstrap.min.css'
